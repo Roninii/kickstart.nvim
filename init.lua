@@ -469,6 +469,12 @@ require('lazy').setup({
             plugins = {
               {
                 name = '@vue/typescript-plugin',
+                -- Note, this location is dependent on where @vue/typescript-plugin is installed. Must be globally installed.
+                -- To find the location, you can run `npm -g ls @vue/typescript-plugin`
+                -- Output should look something like:
+                -- /home/ronini/.nvm/versions/node/v18.18.0/lib
+                -- └── @vue/typescript-plugin@2.0.7
+                -- Then you can set the location to the lib/node_modules/@vue/typescript-plugin version.
                 location = home .. '/.nvm/versions/node/v18.18.0/lib/node_modules/@vue/typescript-plugin',
                 languages = { 'javascript', 'typescript', 'vue' },
               },
@@ -480,6 +486,10 @@ require('lazy').setup({
             'vue',
           },
         },
+        astro = {},
+        tailwindcss = {},
+        volar = {},
+        prettier = {},
         --
 
         lua_ls = {
@@ -722,7 +732,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'astro', 'css', 'html', 'tsx', 'typescript', 'vue' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
