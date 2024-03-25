@@ -466,32 +466,20 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {
-          -- Add Vue support to the TS LSP.
-          init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                -- Note, this location is dependent on where @vue/typescript-plugin is installed. Must be globally installed.
-                -- To find the location, you can run `npm -g ls @vue/typescript-plugin`
-                -- Output should look something like:
-                -- /home/ronini/.nvm/versions/node/v18.18.0/lib
-                -- └── @vue/typescript-plugin@2.0.7
-                -- Then you can set the location to the lib/node_modules/@vue/typescript-plugin version.
-                location = home .. '/.nvm/versions/node/v18.18.0/lib/node_modules/@vue/typescript-plugin',
-                languages = { 'javascript', 'typescript', 'vue' },
-              },
-            },
-          },
-          filetypes = {
-            'javascript',
-            'typescript',
-            'vue',
-          },
-        },
+        tsserver = {},
         astro = {},
         tailwindcss = {},
-        volar = {},
+        volar = {
+          filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+            typescript = {
+              tsdk = vim.fn.getcwd() .. 'node_modules/typescript',
+            },
+          },
+        },
         prettier = {},
         jsonls = {},
         --
