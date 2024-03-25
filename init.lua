@@ -493,6 +493,7 @@ require('lazy').setup({
         tailwindcss = {},
         volar = {},
         prettier = {},
+        jsonls = {},
         --
 
         lua_ls = {
@@ -740,7 +741,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'astro', 'css', 'html', 'tsx', 'javascript', 'typescript', 'vue' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'astro', 'css', 'html', 'tsx', 'javascript', 'typescript', 'vue', 'json' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
