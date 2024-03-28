@@ -484,8 +484,6 @@ require('lazy').setup({
         prettier = {},
         jsonls = {},
         eslint_d = {},
-        --
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
