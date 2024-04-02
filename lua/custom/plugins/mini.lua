@@ -41,9 +41,6 @@ return {
 
       -- Move lines and selections in direction
       require('mini.move').setup()
-
-      -- Git
-      require('mini.diff').setup()
     end,
   },
 }
