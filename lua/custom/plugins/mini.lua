@@ -41,6 +41,9 @@ return {
 
       -- Move lines and selections in direction
       require('mini.move').setup()
+
+      -- Start page
+      require('mini.starter').setup()
     end,
   },
 }
