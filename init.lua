@@ -172,6 +172,7 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       current_line_blame = true,
+      numhl = true,
     },
   },
 
