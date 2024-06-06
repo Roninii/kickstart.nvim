@@ -44,6 +44,15 @@ return {
 
       -- Start page
       require('mini.starter').setup()
+
+      -- File utils
+      require('mini.files').setup()
+      local minifiles_toggle = function()
+        if not MiniFiles.close() then
+          MiniFiles.open()
+        end
+      end
+      vim.keymap.set('n', '<leader>ft', minifiles_toggle, { desc = '[F]ile utils [T]oggle' })
     end,
   },
 }
