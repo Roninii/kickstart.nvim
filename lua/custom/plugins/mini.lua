@@ -19,8 +19,6 @@ return {
       require('mini.surround').setup()
 
       -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
       statusline.setup { use_icons = vim.g.have_nerd_font }
@@ -38,6 +36,12 @@ return {
 
       -- Highlight indent scope
       require('mini.indentscope').setup()
+
+      -- Jump to next/previous single character
+      require('mini.jump').setup()
+
+      -- Show notifications
+      require('mini.notify').setup()
 
       -- Move lines and selections in direction
       require('mini.move').setup {
