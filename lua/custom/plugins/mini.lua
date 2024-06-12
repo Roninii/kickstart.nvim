@@ -40,7 +40,20 @@ return {
       require('mini.indentscope').setup()
 
       -- Move lines and selections in direction
-      require('mini.move').setup()
+      require('mini.move').setup {
+        mappings = {
+          -- Visual mode
+          left = '<M-Left>',
+          right = '<M-Right>',
+          down = '<M-Down>',
+          up = '<M-Up>',
+          -- Normal mode
+          line_left = '<M-Left>',
+          line_right = '<M-Right>',
+          line_down = '<M-Down>',
+          line_up = '<M-Up>',
+        },
+      }
 
       -- Start page
       require('mini.starter').setup()
